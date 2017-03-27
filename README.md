@@ -1,2 +1,2 @@
 # Simple Weather
-Simple Weather application which uses Express, Socket.io, NodeGeocoder and OpenWeatherMap API.
+Simple Weather application which uses Express, Socket.io, NodeGeocoder, Jade and OpenWeatherMap API.
