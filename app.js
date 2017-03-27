@@ -47,7 +47,6 @@ io.sockets.on('connection', function(socket){
 var location='';
 
  socket.on('loc1', function(data){
-   console.log(data.lat, data.long);
    geocoder.reverse({lat:data.lat, lon:data.long}, function(err, res) {
    var obj = JSON.parse(JSON.stringify(res[0]));
    var location = obj.city + ","+" " + obj.country;
