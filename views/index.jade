@@ -1,0 +1,33 @@
+div(class='container')
+ div(class='page-header')
+  h1 
+   span(class='glyphicon glyphicon-tint', style='padding-left:5px;')
+   span Simple Weather
+     small
+      span(style='padding-left:7px;') nothing else
+
+ div(id='location')
+  h2 
+   span(class='glyphicon glyphicon-map-marker')
+   span(id='locloc') 
+   
+   
+ div(id='info')
+  div(class='row')
+   div(class='col-md-6', id='temp')
+    span +7 &#8451;
+   div(class='col-md-6', id='descr')
+    span Partially Cloudy
+    
+script
+ |if (window.navigator && window.navigator.geolocation) 
+ |{
+ |window.navigator.geolocation.getCurrentPosition(function(position) 
+ | {
+ |  var loc = {"lat": position.coords.latitude, "long": position.coords.longitude };
+ |  socket.emit('loc1', loc)
+ |})
+ |}
+ |socket.on('loc2',function(data){
+ |$('#locloc').html(data)   
+ |})

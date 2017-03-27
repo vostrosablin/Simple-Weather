@@ -1,0 +1,17 @@
+{
+  "name": "weather_website",
+  "version": "1.0.0",
+  "description": "simple weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nikita vostrosablin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "2.4.3",
+    "geocoder": "^0.2.3",
+    "jade": "^1.11.0",
+    "socket.io": "1.7.3"
+  }
+}
