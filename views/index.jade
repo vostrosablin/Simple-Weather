@@ -47,10 +47,14 @@ script
  |$('#temp').html(data+' '+'&#8451') 
  |})
  |socket.on('id', function(data){   
- |console.log(data);
  |if(data=='8'){
  |$('body').addClass('clear')   
- |}else {
+ |}else if (data=='2') {
+ |$('body').addClass('thunder') 
+ |}else if (data=='2') {
+ |$('body').addClass('drizle')    
+ |} 
+ |else{
  |$('body').addClass('clear1')
  |}
  |})

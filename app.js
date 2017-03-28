@@ -58,7 +58,6 @@ socket.on('weather1', function(data){
   socket.emit('descr', data.weather[0].description);
   socket.emit('temp', data.main.temp);
   socket.emit('id', data.weather[0].id.toString().charAt(0));
-  console.log(data.weather[0].id.toString().charAt(0));
 })
 
 })

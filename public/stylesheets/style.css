@@ -3,6 +3,16 @@ body.clear {
     background-attachment: fixed;
     background-size: cover;
 }
+body.thunder {
+    background-image: url("../img/thunder.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+body.drizle {
+    background-image: url("../img/drizle.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
 body.clear1 {
     background-image: url("../img/clear1.jpg");
     background-attachment: fixed;
