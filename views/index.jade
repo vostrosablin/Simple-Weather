@@ -33,7 +33,6 @@ script
  |            units: 'metric',
  |            APPID: '105399c9ba76992b81e3e771490300c8'
  |             }).done(function(weather) {
- |             console.log(weather)
  |             socket.emit('weather1', weather)
  |             })
  |})
@@ -46,4 +45,12 @@ script
  |})
  |socket.on('temp', function(data){
  |$('#temp').html(data+' '+'&#8451') 
+ |})
+ |socket.on('id', function(data){   
+ |console.log(data);
+ |if(data=='8'){
+ |$('body').addClass('clear')   
+ |}else {
+ |$('body').addClass('clear1')
+ |}
  |})

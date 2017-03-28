@@ -1,6 +1,12 @@
-body  {
-    background-image: url("../img/image.jpg");
+body.clear {
+    background-image: url("../img/clear.jpg");
     background-attachment: fixed;
+    background-size: cover;
+}
+body.clear1 {
+    background-image: url("../img/clear1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 div.page-header {
     border-width: 1px;
