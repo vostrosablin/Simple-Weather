@@ -54,4 +54,9 @@ var location='';
    });
   })
 
+socket.on('weather1', function(data){
+  socket.emit('descr', data.weather[0].description);
+  socket.emit('temp', data.main.temp);
+})
+
 })

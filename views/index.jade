@@ -2,7 +2,7 @@ div(class='container')
  div(class='page-header')
   h1 
    span(class='glyphicon glyphicon-tint', style='padding-left:5px;')
-   span Simple Weather
+   span(id='header') Simple Weather
      small
       span(style='padding-left:7px;') nothing else
 
@@ -14,20 +14,36 @@ div(class='container')
    
  div(id='info')
   div(class='row')
-   div(class='col-md-6', id='temp')
-    span +7 &#8451;
-   div(class='col-md-6', id='descr')
-    span Partially Cloudy
+   div(class='col-md-6')
+    span(id='temp') 
+   div(class='col-md-6')
+    span(id='descr') 
     
 script
  |if (window.navigator && window.navigator.geolocation) 
  |{
+ |var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
  |window.navigator.geolocation.getCurrentPosition(function(position) 
  | {
  |  var loc = {"lat": position.coords.latitude, "long": position.coords.longitude };
  |  socket.emit('loc1', loc)
+ |  $.getJSON(openWeatherMap, {
+ |            lat: position.coords.latitude,
+ |            lon: position.coords.longitude,
+ |            units: 'metric',
+ |            APPID: '105399c9ba76992b81e3e771490300c8'
+ |             }).done(function(weather) {
+ |             console.log(weather)
+ |             socket.emit('weather1', weather)
+ |             })
  |})
  |}
  |socket.on('loc2',function(data){
  |$('#locloc').html(data)   
+ |})
+ |socket.on('descr', function(data){
+ |$('#descr').html(data) 
+ |})
+ |socket.on('temp', function(data){
+ |$('#temp').html(data+' '+'&#8451') 
  |})
