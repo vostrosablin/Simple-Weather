@@ -13,6 +13,16 @@ body.drizle {
     background-attachment: fixed;
     background-size: cover;
 }
+body.rain {
+    background-image: url("../img/rain.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+body.snow {
+    background-image: url("../img/snow.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
 body.clear1 {
     background-image: url("../img/clear1.jpg");
     background-attachment: fixed;
